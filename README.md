@@ -10,14 +10,18 @@ Extensions and utilities for `System.Net.Http.HttpClient` on .NET and .NET Core.
 
 ## 1. Typed Extensions for `HttpClient`
 
-`GET`/`POST`/`PUT`/`DELETE` of standard .NET objects using `DataContractJsonSerializer`. (Supports data contract annotations.)
+`GET`/`POST`/`PUT`/`DELETE` of standard .NET objects using `DataContractJsonSerializer`. (Optional: Supports data contract annotations.)
 
 #### Setup
 Declare a model:
 ```csharp
+[DataContract]
 public class Thing
 {
+    [DataMember]
     public int Id { get; set; }
+
+    [DataMember]
     public string SomeProperty { get; set; }
 }
 ```
