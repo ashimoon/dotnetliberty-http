@@ -1,0 +1,45 @@
+﻿{
+    "version": "1.0.0-*",
+    "title": "DotNetLiberty.Http",
+    "description": "Extensions and utilities for System.Net.Http.HttpClient on .NET and .NET Core.",
+    "authors": [ "Armen Shimoon" ],
+    "tags": [ "" ],
+    "projectUrl": "https://github.com/ashimoon/dotnetliberty-http",
+    "licenseUrl": "https://raw.githubusercontent.com/ashimoon/dotnetliberty-http/master/LICENSE.txt",
+    "copyright": "2015 Armen Shimoon (.NET Liberty http://dotnetliberty.com)",
+
+    "frameworks": {
+        "net451": {
+            "frameworkAssemblies": {
+                "System.Net.Http":  "",
+                "System.Runtime": "",
+                "System.Runtime.Serialization": "",
+                "System.Xml": ""
+            }
+        },
+        "dotnet5.4": {
+            "dependencies": {
+                "Microsoft.CSharp": "4.0.1-beta-23516",
+                "System.Collections": "4.0.11-beta-23516",
+                "System.Linq": "4.0.1-beta-23516",
+                "System.Runtime": "4.0.21-beta-23516",
+                "System.Threading": "4.0.11-beta-23516",
+                "System.Net.Http": "4.0.1-beta-23516",
+                "System.Runtime.Serialization.Primitives": "4.1.0-beta-23516",
+                "System.Runtime.Serialization.Json": "4.0.1-beta-23516"
+            }
+        },
+        "dnxcore50": {
+            "dependencies": {
+                "Microsoft.CSharp": "4.0.1-beta-23516",
+                "System.Collections": "4.0.11-beta-23516",
+                "System.Linq": "4.0.1-beta-23516",
+                "System.Runtime": "4.0.21-beta-23516",
+                "System.Threading": "4.0.11-beta-23516",
+                "System.Net.Http": "4.0.1-beta-23516",
+                "System.Runtime.Serialization.Primitives": "4.1.0-beta-23516",
+                "System.Runtime.Serialization.Json": "4.0.1-beta-23516"
+            }
+        }
+    }
+}
