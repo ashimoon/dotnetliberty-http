@@ -38,11 +38,11 @@ var client = new HttpClient()
 ```
 #### GET /api/things/
 ```csharp
-IEnumerable<Thing> things = client.GetManyAsync<Thing>();
+IEnumerable<Thing> things = await client.GetManyAsync<Thing>();
 ```
 #### GET /api/things/1
 ```csharp
-Thing thing = client.GetSingleAsync<Thing>(1);
+Thing thing = await client.GetSingleAsync<Thing>(1);
 ```
 #### POST /api/things/
 ```csharp
