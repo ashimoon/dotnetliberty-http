@@ -3,12 +3,11 @@
 Extensions and utilities for `System.Net.Http.HttpClient` on .NET and .NET Core.
 
 ## Contents
-1. Typed Extensions for `HttpClient`
-2. `WebApiClient` for typed Web API invocation
-3. Synchronous extensions for `HttpClient`
-4. `JsonContent<TEntity>` for easy JSON serialization
+1. Typed extensions for `HttpClient`
+2. Synchronous extensions for `HttpClient`
+3. `JsonContent<TEntity>` for easy JSON serialization
 
-## 1. Typed Extensions for `HttpClient`
+## 1. Typed extensions for `HttpClient`
 
 `GET`/`POST`/`PUT`/`DELETE` of standard .NET objects using `DataContractJsonSerializer`. (Optional: Supports data contract annotations.)
 
@@ -62,42 +61,7 @@ Thing updated = await client.PutAsync(1, new Thing {
 await client.DeleteAsync(1);
 ```
 
-## 2. `WebApiClient` for typed Web API invocation
-
-Extract an interface from your Web API Controller. I like to put this in a shared contract library (along with data transfer object models).
-```csharp
-public class Thing
-{
-    public int Id { get; set; }
-    public string SomeProperty { get; set; }
-}
-public interface IThingsApi
-{
-    void Delete(int id);
-    IEnumerable<Thing> Get();
-    Thing Get(int id);
-    Thing Post(Thing value);
-    Thing Put(int id, Thing value);
-}
-```
-Extend `WebApiClient`:
-```csharp
-public class ThingsApiClient : WebApiClient<Thing, int>, IThingsApi
-{
-    public ThingsApiClient(Uri uri)
-        : base(uri)
-    { }
-}
-```
-Use:
-```csharp
-IThingsApi api = new ThingsApiClient(
-    new Uri("http://localhost:5000/api/things/"));
-var thing = api.Get(1);
-api.Delete(thing);
-```
-
-## 3. Synchronous extensions for `HttpClient`
+## 2. Synchronous extensions for `HttpClient`
 
 `System.Net.Http.HttpClient` only supports asynchronous variants of operations out of the box. Rather than handle `Wait`ing and unpacking exceptions we can use synchronous extension methods.
 
@@ -123,7 +87,7 @@ var request = new HttpRequestMessage();
 HttpResponseMessage response = client.Send(request);
 ```
 
-## 4. `JsonContent<TEntity>` for easy JSON serialization
+## 3. `JsonContent<TEntity>` for easy JSON serialization
 
 Rather than having to serialize and encode your entities into a `StringContent` instance manually, you can use a `JsonContent<TEntity>(TEntity)` instead.
 
