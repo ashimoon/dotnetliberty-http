@@ -101,7 +101,9 @@ api.Delete(thing);
 
 `System.Net.Http.HttpClient` only supports asynchronous variants of operations out of the box. Rather than handle `Wait`ing and unpacking exceptions we can use synchronous extension methods.
 
-### Import Extensions
+### Setup
+
+Import extensions:
 ```csharp
 using DotNetLiberty.Http.Sync;
 ```
