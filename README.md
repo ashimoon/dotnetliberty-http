@@ -3,7 +3,7 @@
 Extensions and utilities for `System.Net.Http.HttpClient` on .NET and .NET Core.
 
 ## Contents
-1. Strongly typed REST Extensions for `HttpClient`
+1. Typed Extensions for `HttpClient`
 2. `WebApiClient` for typed Web API invocation
 3. Synchronous extensions for `HttpClient`
 4. `JsonContent<TEntity>` for easy JSON serialization
